@@ -8,22 +8,19 @@ int main(void)
 	int q;
 	int p;
 
-	for (q = 48; q <= 56; q++)
+	for (q = 0; q < 10; q++)
 	{
-	for (p = 49; p <= 57; p++)
+	for (p = q + 1; p < 10; p++)
 	{
-		if (q != p)
+		putchar(q + '0');
+		putchar(p + '0');
+		if (q != 8 || p != 9)
 		{
-		putchar(q);
-		putchar(p);
-		}
-		if (q != 56 || p != 57)
-		break;
 		putchar(',');
 		putchar(' ');
 	}
 	}
-
+	}
 	putchar('\n');
 	return (0);
 }
