@@ -16,7 +16,7 @@ int j;
 		{
 			for (j = 50; j < 58; j++)
 			{
-				if (m > j && j > k)
+				if (j > m && m > k)
 				{
 					putchar(k);
 					putchar(m);
