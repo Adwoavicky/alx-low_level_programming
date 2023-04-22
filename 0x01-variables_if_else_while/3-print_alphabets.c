@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
-*Main - Entry point
-*description: 'prints the alphabets in lowercase and uppercase'
-*Return: always 0
+* main - Entry point
+* description: prints the alphabets in lowercase and uppercase
+* Return: always 0
 */
 int main(void)
 {
