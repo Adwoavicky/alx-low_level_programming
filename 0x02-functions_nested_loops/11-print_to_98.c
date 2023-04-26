@@ -9,7 +9,7 @@ void print_to_98(int a)
 {
 	if (a <= 98)
 	{
-	for (a = 0; a <= 98; a++)
+	for (; a <= 98; a++)
 	{
 	if (a == 98)
 	{
@@ -25,7 +25,7 @@ void print_to_98(int a)
 	}
 	else
 	{
-	for (a = 0; a >= 98; a--)
+	for (; a >= 98; a--)
 	{
 	if (a == 98)
 	{
