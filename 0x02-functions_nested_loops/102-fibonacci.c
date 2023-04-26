@@ -18,6 +18,7 @@ int main(void)
 	else
 	{
 	F2 += F1;
+	F1 = F2 - F1;
 	printf("%ld, ", F2);
 	}
 	m++;
