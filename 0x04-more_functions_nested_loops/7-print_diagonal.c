@@ -1,11 +1,13 @@
 #include "main.h"
+
 /**
-* print_diagonal - draws a diagonal line
-* @n: the character to be drawn
-* Return: always 0
+* print_diagonal - prints a diagonal line
+* @n: input variable
+*
+* Return: always void
 */
 
-void print_diagonal(int)
+void print_diagonal(int n)
 {
 	int m, p;
 
