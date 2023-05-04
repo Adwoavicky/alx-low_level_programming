@@ -18,7 +18,7 @@ void swap_string(char *n)
 	}
 	k--;
 
-	for (l = 0; l < k; l++)
+	for (l = 0; l < k; l++, k--)
 	{
 		y = *(n + l);
 		*(n + l) = *(n + k);
