@@ -18,8 +18,8 @@ char *leet(char *r)
 
 	for (s = 0; r[s] != '\0'; s++)
 	{
-		for (p = 0; p < 10; p++)
-		{
+	for (p = 0; p < 10; p++)
+	{
 	if (r[s] == letters[p])
 	{
 		r[s] = number[p];
