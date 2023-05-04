@@ -16,18 +16,14 @@ char *leet(char *r)
 	char letters[] = "aAeEoOtTlL";
 	char number[] = "4433007711";
 
-	s = 0;
-	while (r[s] != '\0')
+	for (s = 0; r[s] != '\0'; s++)
 	{
-		p = 0;
-	while (p < 10)
-	{
-	if (letters[p] == r[s])
+		for (p = 0; p < 10; p++)
+		{
+	if (r[s] == letters[p])
 	{
 		r[s] = number[p];
 	}
-	p++;
-	s++;
 	}
 	}
 	return (r);
