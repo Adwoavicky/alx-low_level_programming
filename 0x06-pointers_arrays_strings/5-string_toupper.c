@@ -19,5 +19,5 @@ char *string_toupper(char *v)
 	}
 	c++;
 	}
-	return(v);
+	return (v);
 }
