@@ -40,10 +40,11 @@ void print_buffer(char *b, int size)
 
 			if (v < 32 || v > 132)
 			{
-			v = '-';
+			v = '.';
 			}
 			printf("%c", v);
-			k += 10;
 		}
+		printf("\n");
+		k += 10;
 	}
 }
