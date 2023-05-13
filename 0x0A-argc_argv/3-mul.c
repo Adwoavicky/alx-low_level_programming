@@ -19,7 +19,7 @@ int _atoi(char *s)
 	while (s[b] != '\0')
 		b++;
 
-	while (t < b && v == 0)
+	while (t < b && c == 0)
 	{
 		if (s[t] == 45)
 			++p;
@@ -27,11 +27,11 @@ int _atoi(char *s)
 		if (s[t] >= 48 && s[t] <= 57)
 		{
 			m = s[t] - 48;
-			if (m % 2)
+			if (p % 2)
 				m = -m;
 			v = v * 10 + m;
 			c = 1;
-			if (s[t + 1] < 48 || s[t + 1] > 58)
+			if (s[t + 1] < 48 || s[t + 1] > 57)
 				break;
 			c = 0;
 		}
