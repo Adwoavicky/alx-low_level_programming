@@ -3,9 +3,9 @@
 #include <stdlib.h>
 
 /**
-* _strdup - Fuction that copies the content of a string
+* _strdup - fuction that copies the content of a string
 * @str: char to be copied
-* Return: NULL if str is 0
+* Return: always 0
 */
 
 char *_strdup(char *str)
@@ -18,17 +18,19 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	for (j = 0; str[j] != '\0'; j++)
+	j = 0;
+
+	while (str[j] != '\0')
+		j++;
 
 	n = malloc(sizeof(char) * (j + 1));
-
 	if (n == NULL)
+	{
 		return (NULL);
-
+	}
 	for (p = 0; str[p]; p++)
 	{
 		n[p] = str[p];
 	}
-
 	return (n);
 }
