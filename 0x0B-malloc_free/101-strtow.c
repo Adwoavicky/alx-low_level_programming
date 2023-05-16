@@ -41,12 +41,10 @@ char **strtow(char *str)
 	while (*(str + d))
 		d++;
 	look = find_word(str);
-
 	if (look == 0)
 		return (NULL);
 
 	strtow = (char **) malloc(sizeof(char *) * (look + 1));
-
 	if (strtow == NULL)
 		return (NULL);
 
