@@ -24,6 +24,7 @@ int find_word(char *s)
 			ride++;
 		}
 	}
+
 	return (ride);
 }
 
