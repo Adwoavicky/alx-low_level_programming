@@ -4,7 +4,7 @@
 /**
 * find_word - prints out the number of words in a string
 * @s: string to look through
-* Return: words found
+* Return: number of words found
 */
 
 int find_word(char *s)
@@ -36,7 +36,7 @@ int find_word(char *s)
 
 char **strtow(char *str)
 {
-	char **strtow, *bow;
+	char **throw, *bow;
 	int a, c = 0, d = 0, look, g = 0, w, t;
 
 	while (*(str + d))
@@ -45,8 +45,8 @@ char **strtow(char *str)
 	if (look == 0)
 		return (NULL);
 
-	strtow = (char **) malloc(sizeof(char *) * (look + 1));
-	if (strtow == NULL)
+	throw = (char **) malloc(sizeof(char *) * (look + 1));
+	if (throw == NULL)
 		return (NULL);
 
 	for (a = 0; a < d; a++)
@@ -62,7 +62,7 @@ char **strtow(char *str)
 				while (w < t)
 					*bow++ = str[w++];
 				*bow = '\0';
-				strtow[c] = bow - g;
+				throw[c] = bow - g;
 				c++;
 				g = 0;
 			}
@@ -71,7 +71,7 @@ char **strtow(char *str)
 			w = a;
 	}
 
-	strtow[c] = NULL;
+	throw[c] = NULL;
 
-	return (strtow);
+	return (throw);
 }
