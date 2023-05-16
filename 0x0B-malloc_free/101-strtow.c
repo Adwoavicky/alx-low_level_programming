@@ -30,7 +30,7 @@ int find_word(char *s)
 /**
 * **strtow - Function that divides a string into two words
 * @str: string to be divided
-* Return: NULL if str equal NULL or space, otherwise Error
+* Return: pointer to an arry of string or NULL(Error)
 */
 
 char **strtow(char *str)

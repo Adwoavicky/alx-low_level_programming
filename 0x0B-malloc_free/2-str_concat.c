@@ -5,7 +5,7 @@
 * str_concat - concatenates two string
 * @s1: first string
 * @s2: second string
-* Return: the content of s1 and s2
+* Return: the concat of s1 and s2
 */
 
 char *str_concat(char *s1, char *s2)
@@ -18,11 +18,9 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == NULL)
 		s2 = " ";
 
-	g = 0;
+	g = h = 0;
 	while (s1[g] != '\0')
 		g++;
-
-	h = 0;
 	while (s2[h] != '\0')
 		h++;
 
@@ -33,14 +31,13 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	}
 
-	g = 0;
+	g = h = 0;
 	while (s1[g] != '\0')
 	{
 		cat[g] = s1[g];
 		g++;
 	}
 
-	h = 0;
 	while (s2[h] != '\0')
 	{
 		cat[g] = s2[h];
