@@ -31,7 +31,8 @@ int find_word(char *s)
 /**
 * **strtow - Function that divides a string into two words
 * @str: string to be divided
-* Return: pointer to an arry of string or NULL(Error)
+* Return: pointer to an arry of string
+* NULL(Error)
 */
 
 char **strtow(char *str)
@@ -49,7 +50,7 @@ char **strtow(char *str)
 	if (throw == NULL)
 		return (NULL);
 
-	for (a = 0; a < d; a++)
+	for (a = 0; a <= d; a++)
 	{
 		if (str[a] == ' ' || str[a] == '\0')
 		{
