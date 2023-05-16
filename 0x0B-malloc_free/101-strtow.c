@@ -57,7 +57,7 @@ char **strtow(char *str)
 			if (g)
 			{
 				t = a;
-				bow = (char *) malloc(sizeof(char *) * (g + 1));
+				bow = (char *) malloc(sizeof(char) * (g + 1));
 				if (bow == NULL)
 					return (NULL);
 				while (w < t)
