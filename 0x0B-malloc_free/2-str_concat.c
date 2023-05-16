@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 /**
-* str_concat - concatenates two string
+* str_concat - a function that concatenates two strings
 * @s1: first string
 * @s2: second string
-* Return: the concat of s1 and s2
+* Return: the concatenates of s1 and s2
 */
 
 char *str_concat(char *s1, char *s2)
@@ -37,7 +37,6 @@ char *str_concat(char *s1, char *s2)
 		cat[g] = s1[g];
 		g++;
 	}
-
 	while (s2[h] != '\0')
 	{
 		cat[g] = s2[h];
@@ -47,3 +46,4 @@ char *str_concat(char *s1, char *s2)
 	cat[g] = '\0';
 	return (cat);
 }
+
