@@ -1,12 +1,13 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
+
 #define ERR_MSG "Error"
 
 /**
-* check_digit - assess if a string contains a non-digit char
-* @s: string to be aseesed
-* Return: 0 if a non-digit is found else 1
+* check_digit - assess if a string contains a non- digit char
+* @s: string to be assessed
+* Return: 0 if non-digit is found else 1
 */
 
 int check_digit(char *s)
@@ -15,18 +16,17 @@ int check_digit(char *s)
 
 	while (s[b])
 	{
-		if (s[b] < 48 || s[b] > 57)
+		if (s[b] < '0' || s[b] > '9')
 			return (0);
 		b++;
 	}
 	return (1);
 }
 
-
 /**
-* _strlen - function that returns the length of a string
+* _strlen - funtion that returns the length of a string
 * @s: string to be returned
-* Return: the length of string
+* Return: the length of the string
 */
 
 int _strlen(char *s)
@@ -40,20 +40,20 @@ int _strlen(char *s)
 	return (g);
 }
 
-
 /**
-* error - checks errors in function
+* error - check for errors in  the function
+* Return: void
 */
 
 void error(void)
 {
-	printf("Error/n");
+	printf("Error\n");
 	exit(98);
 }
 
 /**
-* main - prints the multiples of two positive numbers
-* @argc: arguments count
+* main - print out the multiples of two positive numbers
+* @argc: number of arguments
 * @argv: array of arguments
 * Return: always void
 */
@@ -76,11 +76,11 @@ int main(int argc, char *argv[])
 		answer[s] = 0;
 	for (mul = mul - 1; mul >= 0; mul--)
 	{
-		n = num1[mul] - 48;
+		n = num1[mul] - '0';
 		c = 0;
 		for (mul1 = _strlen(num2) - 1; mul1 >= 0; mul1--)
 		{
-			v = num2[mul1] - 48;
+			v = num2[mul1] - '0';
 			c += answer[mul + mul1 + 1] + (n * v);
 			answer[mul + mul1 + 1] = c % 10;
 			c /= 10;
@@ -93,11 +93,11 @@ int main(int argc, char *argv[])
 		if (answer[s])
 			a = 1;
 		if (a)
-			_putchar(answer[s] + 48);
+			_putchar(answer[s] + '0');
 	}
 	if (!a)
-		_putchar(48);
-putchar('\n');
-free(answer);
-return (0);
+		_putchar('0');
+	_putchar('\n');
+	free(answer);
+	return (0);
 }
