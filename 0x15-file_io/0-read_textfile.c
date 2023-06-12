@@ -2,15 +2,15 @@
 #include <stdlib.h>
 
 /**
-* read_textfile -reads a text file and outputs it out to POSIX
-* @filename: name of file to be read
-* @letters: number of letters to be read and outputted
-* Return: actual number of letters
+* read_textfile - a function that reads a text file and outputs it to POSIX
+* @filename: text file to be read and outputted
+* @letters: total number of letters
+* Return: actual number of letters to be read and outputed
 */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char *pF;
+	char *str;
 	ssize_t fd;
 	ssize_t w;
 	ssize_t t;
@@ -22,17 +22,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd == -1)
 		return (0);
 
-	pF = malloc(sizeof(char) * letters);
-	if (pF == NULL)
+	str = malloc(sizeof(char) * letters);
+	if (str == NULL)
 	{
 		close(fd);
 	return (0);
 	}
 
-	t = read(fd, pF, letters);
-	w = write(STDOUT_FILENO, pF, t);
+	t = read(fd, str, letters);
+	w = write(STDOUT_FILENO, str, t);
 
-	free(pF);
+	free(str);
 	close(fd);
 	return (w);
 }
