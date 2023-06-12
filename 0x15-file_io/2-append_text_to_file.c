@@ -1,5 +1,5 @@
-#include "main.h"
 #include <stdio.h>
+#include "main.h"
 
 /**
 * append_text_to_file - a function that appends a text at the end of a file
@@ -14,8 +14,8 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (filename == NULL)
 	{
-		printf("filename not here\n");
-			return (-1);
+		printf("Filename not here\n");
+		return (-1);
 	}
 
 	if (text_content != NULL)
@@ -29,11 +29,10 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (o == -1 || w == -1)
 	{
-		printf("fail cannot be written into or open\n");
-			return (-1);
+		printf("File failed to open or be wriiten into\n");
+		return (-1);
 	}
 
-		close(o);
-
-		return (1);
+	close(o);
+	return (1);
 }
