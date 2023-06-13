@@ -14,17 +14,17 @@ void close_file(int fd);
 
 char *create_buffer(char *file)
 {
-	char *buf;
+	char *pF;
 
-	buf = malloc(sizeof(char) * 1024);
+	pF = malloc(sizeof(char) * 1024);
 
-	if (buf == NULL)
+	if (pF == NULL)
 	{
 		dprintf(STDERR_FILENO,
 				"Error: Can't write to %s\n", file);
 		exit(99);
 	}
-	return (buf);
+	return (pF);
 }
 
 /**
