@@ -51,9 +51,9 @@ void close_file(int fd)
 * Return: always succes
 *
 * Description: exit code 97 if argument count is incorrect
-* Exit code 98 - if file_from does not exist or cannot be read
-* Exit code 99 - if file_to cannot be created or written to
-* Exit code 100 - if file_to or file_from cannot be closed
+*              Exit code 98 - if file_from does not exist or cannot be read
+*              Exit code 99 - if file_to cannot be created or written to
+*              Exit code 100 - if file_to or file_from cannot be closed
 */
 
 int main(int argc, char *argv[])
@@ -75,7 +75,8 @@ int main(int argc, char *argv[])
 	do {
 		if (from == -1 || r == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
+			dprintf(STDERR_FILENO,
+					"Error: Can't read file %s\n", argv[1]);
 			free(pF);
 			exit(98);
 		}
@@ -83,7 +84,8 @@ int main(int argc, char *argv[])
 		w = write(to, pF, r);
 		if (to == -1 || w == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO,
+					"Error: Can't write to %s\n", argv[2]);
 			free(pF);
 			exit(99);
 		}
