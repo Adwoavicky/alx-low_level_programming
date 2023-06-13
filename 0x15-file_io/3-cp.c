@@ -51,14 +51,14 @@ void close_file(int fd)
 * Return: always succes
 *
 * Description: exit code 97 if argument count is incorrect
-* Exit code 98 if file_from does not exist or cannot be read
-* Exit code 99 if file_to cannot be created or written to
-* Exit code 100 if file_to or file_from cannot be closed
+* Exit code 98 - if file_from does not exist or cannot be read
+* Exit code 99 - if file_to cannot be created or written to
+* Exit code 100 - if file_to or file_from cannot be closed
 */
 
 int main(int argc, char *argv[])
 {
-	int where, to, r, w;
+	int from, to, r, w;
 	char *pF;
 
 	if (argc != 3)
@@ -68,12 +68,12 @@ int main(int argc, char *argv[])
 	}
 
 	pF = create_buffer(argv[2]);
-	where = open(argv[1], O_RDONLY);
-	r = read(where, pF, 1024);
+	from = open(argv[1], O_RDONLY);
+	r = read(from, pF, 1024);
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
-		if (where == -1 || r == -1)
+		if (from == -1 || r == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 			free(pF);
@@ -88,13 +88,13 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 
-		r = read(where, pF, 1024);
+		r = read(from, pF, 1024);
 		to = open(argv[2], O_WRONLY | O_APPEND);
 
 	} while (r > 0);
 
 	free(pF);
-	close_file(where);
+	close_file(from);
 	close_file(to);
 
 	return (0);
