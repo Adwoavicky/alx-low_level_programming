@@ -30,10 +30,10 @@ void check_elf(unsigned char *e_ident)
 
 	for (sub = 0; sub < 4; sub++)
 	{
-		if (e_ident[sub] != 127 &&
-		e_ident[sub] != 'E' &&
-		e_ident[sub] != 'L' &&
-		e_ident[sub] != 'F')
+		if  (e_ident[sub] != 127 &&
+		     e_ident[sub] != 'E' &&
+		     e_ident[sub] != 'L' &&
+		     e_ident[sub] != 'F')
 		{
 			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 		    exit(98);
@@ -53,7 +53,7 @@ void print_magic(unsigned char *e_ident)
 {
 	int sub;
 
-	printf(" Magic:  ");
+	printf(" Magic: ");
 
 	for (sub = 0; sub < EI_NIDENT; sub++)
 	{
@@ -73,7 +73,7 @@ void print_magic(unsigned char *e_ident)
 
 void print_class(unsigned char *e_ident)
 {
-	printf("  Class:  ");
+	printf(" Class: ");
 
 	switch (e_ident[EI_CLASS])
 	{
@@ -190,7 +190,7 @@ void print_osabi(unsigned char *e_ident)
 
 void print_abi(unsigned char *e_ident)
 {
-	printf("  ABI Version:                   %d\n",
+	printf(" ABI Version: %d\n",
 		e_ident[EI_ABIVERSION]);
 }
 
